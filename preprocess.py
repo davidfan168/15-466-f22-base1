@@ -8,6 +8,7 @@ with open('./Resources/palette.csv') as f:
 
 magic = [ord('p'),ord('a'),ord('l'),ord('e')]
 output_bytes = bytearray(magic)
+# size, little endian
 output_bytes.append(4 * 14)
 output_bytes.append(0)
 output_bytes.append(0)
@@ -33,6 +34,7 @@ for i in range(1, 5):
     magic = [ord('t'),ord('i'),ord('l'),ord('e')]
     output_bytes = bytearray(magic)
     size = 8
+    # size, little endian
     output_bytes.append(8)
     output_bytes.append(0)
     output_bytes.append(0)

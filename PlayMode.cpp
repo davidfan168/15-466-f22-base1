@@ -325,7 +325,7 @@ void PlayMode::update(float elapsed) {
 	down.pressed = false;
 
 
-	static float interval = 0.8f;
+	static float interval = 1.2f;
 	static float time_passed = 0.0f;
 	time_passed += elapsed;
 	if (time_passed > interval) {

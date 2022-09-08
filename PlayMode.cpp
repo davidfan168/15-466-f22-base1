@@ -277,9 +277,9 @@ void PlayMode::move_down(){
 			&& positions[block_position - 1][x_offset + x] == true) {
 			
 			for (int y = 0; y < 2; y++) {
-				for (int x = 0; x < 3; x++) {
-					if (current_block[y][x] == true) {
-						positions[block_position+y][x_offset + x] = true;
+				for (int x2 = 0; x2 < 3; x2++) {
+					if (current_block[y][x2] == true) {
+						positions[block_position+y][x_offset + x2] = true;
 					}
 				}
 			}
@@ -324,8 +324,7 @@ void PlayMode::update(float elapsed) {
 	right.pressed = false;
 	down.pressed = false;
 
-
-	static float interval = 1.2f;
+	static float interval = 0.8f;
 	static float time_passed = 0.0f;
 	time_passed += elapsed;
 	if (time_passed > interval) {

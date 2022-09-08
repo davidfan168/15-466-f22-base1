@@ -21,17 +21,15 @@ PlayMode::PlayMode() {
 			std::string sprite_path = data_path("sprite" + std::to_string(index));
 			PPU466::Tile tile;
 			std::filebuf fb;
-			if (fb.open (sprite_path,std::ios::in))
-			{
-				std::istream istr(&fb);
-				std::vector<uint8_t> tile_info;
-				read_chunk(istr, magic, &tile_info);
-				for (int i = 0; i < 8; i++) {
-					tile.bit0[i] = tile_info[i];
-					tile.bit1[i] = tile_info[i];
-				}
-				fb.close();
+			fb.open (sprite_path,std::ios::in)
+			std::istream istr(&fb);
+			std::vector<uint8_t> tile_info;
+			read_chunk(istr, magic, &tile_info);
+			for (int i = 0; i < 8; i++) {
+				tile.bit0[i] = tile_info[i];
+				tile.bit1[i] = tile_info[i];
 			}
+			fb.close();
 
 			ppu.tile_table[index] = tile;
 		}

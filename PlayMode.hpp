@@ -31,7 +31,7 @@ struct PlayMode : Mode {
 
 	// (0, 0) denotes the bottom left corner
 	bool current_block[2][3];
-	int color_index;
+	uint8_t color_index;
 
 	// y coordinate of bottom-right position of new block 
 	// relative to grid

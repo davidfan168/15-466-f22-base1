@@ -78,7 +78,7 @@ PlayMode::PlayMode() {
 										 palette_information[8*i+7]);
 			// I have more colors than I need, wasting some space here
 			ppu.palette_table[i] = {
-				c1, c2, c1, c2
+				c2, c1, c2, c1
 			};
 		}
 

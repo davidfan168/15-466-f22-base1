@@ -21,7 +21,7 @@ PlayMode::PlayMode() {
 			std::string sprite_path = data_path("sprite" + std::to_string(index));
 			PPU466::Tile tile;
 			std::filebuf fb;
-			fb.open (sprite_path,std::ios::in)
+			fb.open(sprite_path,std::ios::in);
 			std::istream istr(&fb);
 			std::vector<uint8_t> tile_info;
 			read_chunk(istr, magic, &tile_info);

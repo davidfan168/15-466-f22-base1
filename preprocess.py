@@ -32,6 +32,7 @@ for i in range(1, 5):
         exit()
     magic = [ord('t'),ord('i'),ord('l'),ord('e')]
     output_bytes = bytearray(magic)
+    size = 8
     output_bytes.append(8)
     output_bytes.append(0)
     output_bytes.append(0)

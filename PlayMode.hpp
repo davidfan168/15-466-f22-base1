@@ -17,8 +17,9 @@ struct PlayMode : Mode {
 
 	void tick();
 	void spawn_block();
-	void rotate_block();
-	void check_block_collision();
+	void rotate_all();
+	void move_down();
+	bool check_full();
 
 	//----- game state -----
 
@@ -28,15 +29,18 @@ struct PlayMode : Mode {
 		uint8_t pressed = 0;
 	} left, right, down, up;
 
-	bool current_block[3][3];
+	// (0, 0) denotes the bottom left corner
+	bool current_block[2][3];
+	int color_index;
 
-	struct position {
-		uint8_t x = 0;
-		uint8_t y = 0;
-	} block_position;
+	// y coordinate of bottom-right position of new block 
+	// relative to grid
+	int block_position = 10;
+	const int x_offset = 4;
 
 	bool has_block = false;
 
+	// grid of position
 	bool positions[10][10] = {{false}};
 
 	//some weird background animation:

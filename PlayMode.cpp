@@ -191,7 +191,7 @@ void PlayMode::spawn_block(){
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist6(0,5);
 
-	color_index = dist6(rng);
+	color_index = (uint8_t) dist6(rng);
 	switch (color_index) {
 		case 0:
 		// J block
